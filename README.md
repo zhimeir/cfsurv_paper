@@ -1,4 +1,4 @@
-# conformalized_survival_analysis_paper
+# Paper Repository
 This repository contains the code to reproduce the numerical results in the [Conformalized Survival Analysis]() paper. 
 
 ## Overview
