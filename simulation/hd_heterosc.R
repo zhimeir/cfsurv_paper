@@ -12,7 +12,6 @@ cat(sprintf(" - Running the script with seed %d.\n", seed))
 ########################################
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(survival))
-suppressPackageStartupMessages(library(cfSurvival))
 suppressPackageStartupMessages(library(quantreg))
 suppressPackageStartupMessages(library(conTree))
 suppressPackageStartupMessages(library(GauPro))

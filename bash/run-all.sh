@@ -4,6 +4,6 @@ do
   Rscript ../simulation/ld_homosc.R $seed
   Rscript ../simulation/ld_heterosc.R $seed
   Rscript ../simulation/hd_homosc.R $seed
-  Rscript ../simulation/hd_hetero_sc.R $seed
+  Rscript ../simulation/hd_heterosc.R $seed
 done
 
