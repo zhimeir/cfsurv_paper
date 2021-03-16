@@ -2,29 +2,30 @@
 This repository contains the code to reproduce the numerical results in the [Conformalized Survival Analysis]() paper. 
 
 ## Overview
-We provide the code to <em>exactly</em> reproduce the numerical results in Section 4 of the paper. Based on the code,
-we further develop an R package `cfSurvival` that implements the procedure. The package will be constantly improved and udpated. 
-We recommend the users to check out the R package if they want to want to apply our procedure.
+We implement the CQR- and CDR-LPB from scratch to reproduce the numerical results in Section 4 of the paper. We do not include the code for the results in Section 5 because the UK Biobank data is only available to registered users; see https://www.ukbiobank.ac.uk/ for details.
+
+Based on the code, we further develop an R package `cfsurvival` that implements the procedure. The package will be constantly improved and udpated. We recommend the users download the R package to apply our procedure.
 
 ## Folders
-- `R/`: contains the main functions that implement the variable selection procedures.
-- `utils/`: contains the utility functions that supports the experiments. 
+- `R/`: contains the main functions that implement the CQR, CDR, and other competing methods considered in Section 4.
+- `utils/`: contains the helpers for the experiments. 
 - `simulation/`: contains the scripts to carry out the simulations.
-- `results/`: stores the result.
-- `bash/`: bash files to run the simulations.
+- `results/`: stores the simulation results.
+- `bash/`: bash files to run the simulations in batch mode.
 
 ## Usage
 ### Single run
 Each script in the `simulation/` folder implements one run of the simulation. The users can specify the random seed when running the script. 
 For example, to implement one run of the low-dimensional-homoscedastic-noise experiment in Section 4 with random seed 1, run the following command in your terminal:
 ```{r}
-Rscript ./simulation/ld_homosc.R 1
+cd simulation
+Rscript ld_homosc.R 1
 ```
 
 ### Multiple runs
-The results presented in the paper are averaged over multiple runs. The user can use the bash file in `bash/` to automatically
-implement multiple runs of the simulation. But note that it may take a long time if it is run on a laptop. To use the bash file,
-run the following code in  your terminal:
+The results presented in the paper are based on 100 independent samples. The user can use the bash file in `bash/` to automatically run the whole simulation in batch mode:
 ```{r}
-bash ./bash/run_all.sh
+cd bash
+bash run_all.sh
 ```
+It may take a long time if it is run on a laptop. 
